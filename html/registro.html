@@ -6,50 +6,59 @@
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
-    <section>
+    <section class="container">
+      <section class="desc">
+        <h1>
+          En esta sección, el usuario puede registrar nuevos productos de
+          calzado en el sistema. El formulario solicita información clave como
+          el nombre del zapato, género, categoría , imagen del producto, código
+          único, precio y atributos adicionales. El objetivo principal de esta
+          vista es registrat los zapatos en el inventario, asegurando que cada
+          registro esté completo y normalizado para su posterior visualización.
+        </h1>
+      </section>
       <form class="formu">
-      <h2>Registro de Zapatos</h2>
-      <label>Nombre:</label>
-      <input type="text" id="nombre" />
+        <h2>Registro de Zapatos</h2>
+        <label>Nombre:</label>
+        <input type="text" id="nombre" />
 
-      <label>Genero:</label>
-      <select id="genero">
-        <option value="">Genero</option>
-        <option value="Mujer">Mujer</option>
-        <option value="Hombre">Hombre</option>
-        <option value="Niño/a">Niño/a</option>
-      </select>
+        <label>Genero:</label>
+        <select id="genero">
+          <option value="">Genero</option>
+          <option value="Mujer">Mujer</option>
+          <option value="Hombre">Hombre</option>
+          <option value="Niño/a">Niño/a</option>
+        </select>
 
-      <label>Categoría:</label>
-      <select id="categoria">
-        <option value="">Selecciona una categoría</option>
-        <option value="Deportivo">Deportivo</option>
-        <option value="Casual">Casual</option>
-        <option value="Elegante">Elegante</option>
-        <option value="Elegante">Botas</option>
-        <option value="Elegante">Trabajo / Industriales</option>
-      </select>
+        <label>Categoría:</label>
+        <select id="categoria">
+          <option value="">Selecciona una categoría</option>
+          <option value="Deportivo">Deportivo</option>
+          <option value="Casual">Casual</option>
+          <option value="Elegante">Elegante</option>
+          <option value="Elegante">Botas</option>
+          <option value="Elegante">Trabajo / Industriales</option>
+        </select>
 
-      <label>Imagen:</label>
-      <input type="file" id="imagen" />
+        <label>Imagen:</label>
+        <input type="file" id="imagen" />
 
-      <label>Código:</label>
-      <input type="text" id="codigo" />
+        <label>Código:</label>
+        <input type="text" id="codigo" />
 
-      <label>Precio:</label>
-      <input type="number" id="precio" />
+        <label>Precio:</label>
+        <input type="number" id="precio" />
 
-      <label>Atributo 2:</label>
-      <input type="text" id="atributo2" />
+        <label>Atributo 2:</label>
+        <input type="text" id="atributo2" />
 
-      <button class="btn" onclick="registrarZapato(event)">Registrar</button>
-      <button class="btn" onclick="limpiarCampos()">Limpiar</button>
+        <button class="btn" onclick="registrarZapato(event)">Registrar</button>
+        <button class="btn" onclick="limpiarCampos()">Limpiar</button>
 
-      <button class="btn"><a href="/index.html">Index</a></button>
-      <h3 id="resultado"></h3> 
-    </form>
-  </section>
-    
+        <button class="btn"><a href="/index.html">Index</a></button>
+        <h3 id="resultado"></h3>
+      </form>
+    </section>
 
     <script src="/js/script.js"></script>
   </body>

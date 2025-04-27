@@ -1,61 +1,84 @@
 /* Fondo dividido */
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to bottom, #0f0f3e 0%, #0f0f3e 50%, #f0f0f0 50%, #f0f0f0 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    
-  }
-  
-  .header {
-    color: white;
-    text-align: center;
-    margin-bottom: 20px;
-    
-  }
-  
-  .card {
-    background-color: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 300px;
-    text-align: center;
-  }
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(
+    to bottom,
+    #0f0f3e 0%,
+    #0f0f3e 50%,
+    #f0f0f0 50%,
+    #f0f0f0 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 
-  .formu {
-    background-color: white;
-    padding: 35px;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    gap: 05px;
-    width: 300px;
-    text-align: center;
 
-  }
-  
-  .btn {
-    padding: 10px;
-    background-color: #00cc66;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-  }
-  
-  .btn:hover {
-    background-color: #00b359;
-  }
-  
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 400px;
+  padding: 40px;
+}
+
+.header {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.formu {
+  background-color: white;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+  width: 300px;
+  text-align: center;
+}
+
+.card {
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 300px;
+  text-align: center;
+}
+
+.btn {
+  padding: 10px;
+  background-color: #00cc66;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #00b359;
+}
+
+.desc {
+  background-color: white;
+  padding: 35px;
+  border-radius: 100px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 300px;
+  text-align: center;
+}
