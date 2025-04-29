@@ -14,7 +14,7 @@ const zapatos = [
       precio: 59990,
       talla: 37,
       codigo: "xY27Zp89",
-      imagen: "/img/img2.jpg",
+      imagen: "/images/Zapatos2.jpg",
       categoria: "Casual",
       genero: "Femenino"
     },
