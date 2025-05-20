@@ -100,14 +100,13 @@ body {
     border-radius: 15px;
   }
   
-  /* Footer */
-  .footer {
-    text-align: center;
-    background-color: #2e2a7b;
-    color: white;
-    padding: 20px;
-    margin-top: 60px;
-    font-size: 0.9rem;
-    border-top: 5px solid #00e676;
-  }
+.footer {
+  text-align: center;
+  background-color: #2e2a7b;
+  color: white;
+  padding: 20px;
+  margin-top: 60px;
+  font-size: 0.9rem;
+  border-top: 5px solid #00e676;
+}
   
