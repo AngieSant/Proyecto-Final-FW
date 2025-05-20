@@ -36,8 +36,8 @@
           <option value="Deportivo">Deportivo</option>
           <option value="Casual">Casual</option>
           <option value="Elegante">Elegante</option>
-          <option value="Elegante">Botas</option>
-          <option value="Elegante">Trabajo / Industriales</option>
+          <option value="Botas">Botas</option>
+          <option value="Trabajo / Industriales">Trabajo / Industriales</option>
         </select>
 
         <label>Imagen:</label>
@@ -49,8 +49,18 @@
         <label>Precio:</label>
         <input type="number" id="precio" />
 
-        <label>Atributo 2:</label>
-        <input type="text" id="atributo2" />
+        <label>Talla:</label>
+        <select id="talla">
+          <option value="" >Selecciona una categoría</option>
+          <option value="1">35</option>
+          <option value="2">36</option>
+          <option value="3">37</option>
+          <option value="4">38</option>
+          <option value="5">39</option>
+          <option value="5">40</option>
+          <option value="5">41</option>
+          <option value="5">42</option>
+        </select>
 
         <button class="btn" onclick="registrarZapato(event)">Registrar</button>
         <button class="btn" onclick="limpiarCampos()">Limpiar</button>
@@ -61,5 +71,8 @@
     </section>
 
     <script src="../js/script.js"></script>
+    <footer class="footer">
+      &copy; 2025 Tu Tienda de Zapatos | Contáctanos: info@tutiendazapatos.com
+    </footer>
   </body>
 </html>

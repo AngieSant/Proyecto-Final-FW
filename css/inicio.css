@@ -1,137 +1,113 @@
+/* Fuente general */
 body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
-    font-family: "Segoe UI", sans-serif;
-    background: linear-gradient(
-      to bottom,
-      #0f0f3e 0%,
-      #0f0f3e 50%,
-      #f0f0f0 50%,
-      #f0f0f0 100%
-    );
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
   }
-
   
-
-.card-h {
-    width: 100%;
-    max-width: 1200px;
-    background-color: white;
-    padding: 1rem 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajuste más sutil al sombreado */
-    margin: 1rem auto 2rem auto;
-    display: flex;
-    justify-content: center; /* Centra horizontalmente los botones */
-    align-items: center; /* Alinea verticalmente */
-    gap: 1rem;
-    flex-wrap: wrap;
-    position: relative; /* Por si quieres luego fijarlo */
-    z-index: 10;
-    
-  }
-
-  
-
-  .btn {
-    padding: 10px;
-    background-color: #00cc66;
+  /* Hero section */
+  .hero {
+    background: linear-gradient(to right, #2e2a7b, #3b3b98);
     color: white;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .logo-text {
+    color: #00e676;
+    font-weight: 700;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  /* Botones de navegación */
+  .nav-btn {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .btn {
+    background-color: #00c853;
+    color: white;
+    padding: 12px 20px;
     border: none;
-    border-radius: 6px;
+    border-radius: 25px;
     text-decoration: none;
-    font-size: 16px;
     font-weight: bold;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
   }
   
   .btn:hover {
-    background-color: #017c3f;
+    background-color: #009624;
   }
-
-
-  .card {
-    position: relative;
-    width: 300px;
-    height: 350px;
-    margin: 20px;
-
-
-}
-
-.card .face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: .5s;
-
-}
-
-.card .face .front {
-    transform: perspective(600px) rotateY(0deg);
-    box-shadow: 0 5px 10px #000;
-} 
-
-.card .front img{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background-color: azure;
-}
-
-.card .front h3 {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 45px;
-    line-height: 45px;
-    color: azure;
-    background: rgba(0, 0, 0, .5);
+  
+  /* Sección sobre la tienda */
+  .main-content {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  .about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-text {
+    flex: 1;
+    min-width: 280px;
+  }
+  
+  .about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #2e2a7b;
+  }
+  
+  .about-text p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+  
+  .about-image {
+    flex: 1;
+    min-width: 250px;
     text-align: center;
-}
-
- .card .back {
-transform: perspective(600px) rotateY(180deg);
-background: rgb(123, 201, 247);
-padding: 15px;
-color: #f3f3f3f3;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-text-align: center;
-box-shadow: 0 5px 10px #000;
-} 
-
-.card .back .link {
-    border-top: solid 1px #f3f3f3f3;
-    height: 50px;
-    line-height: 50px;
-}
-
-.card .back .link a {
-    color: #f3f3f3f3;
-}
-
-.card .back h3 {
-    font-size: 30px;
-    margin-top: 20px;
-    letter-spacing: 2px;
-}
-
-.card .back p {
-    letter-spacing: 1px;
-}
-
-.card:hover .front {
-    transform: perspective(600px) rotateY(180deg);
-}
-
-.card:hover .back {
-    transform: perspective(600px) rotateY(360deg);
-}
+  }
+  
+  .about-image img {
+    width: 200px;
+    max-width: 100%;
+    border-radius: 15px;
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    background-color: #2e2a7b;
+    color: white;
+    padding: 20px;
+    margin-top: 60px;
+    font-size: 0.9rem;
+    border-top: 5px solid #00e676;
+  }
+  

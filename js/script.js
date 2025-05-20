@@ -6,11 +6,11 @@ function registrarZapato(event) {
     const categoria = document.getElementById("categoria").value;
     const precio = parseFloat(document.getElementById("precio").value);
     const codigo = document.getElementById("codigo").value.trim();
-    const atributo2 = document.getElementById("atributo2").value.trim();
+    const atributo2 = document.getElementById("talla").value.trim();
     const imagenInput = document.getElementById("imagen");
     const resultado = document.getElementById("resultado");
 
-    if (!nombre || !genero || !categoria || !precio || !codigo || !atributo2 || imagenInput.files.length === 0) {
+    if (!nombre || !genero || !categoria || !precio || !codigo || !talla || imagenInput.files.length === 0) {
         resultado.textContent = "Por favor completa todos los campos.";
         return;
     }
@@ -25,7 +25,7 @@ function registrarZapato(event) {
             categoria,
             precio,
             codigo,
-            atributo2,
+            talla,
             imagen: imagenBase64
         };
 
@@ -61,7 +61,7 @@ function viewZapatos() {
         <p><strong>Categoría:</strong> ${zapato.categoria}</p>
         <p><strong>Código:</strong> ${zapato.codigo}</p>
         <p><strong>Precio:</strong> $${zapato.precio}</p>
-        <p><strong>Atributo 2:</strong> ${zapato.atributo2}</p>
+        <p><strong>Atributo 2:</strong> ${zapato.talla}</p>
       </div>
     </div>
   `;
@@ -79,7 +79,8 @@ function limpiarCampos() {
     document.getElementById("precio").value = "";
     document.getElementById("codigo").value = "";
     document.getElementById("genero").value = "";
-    document.getElementById("atributo2").value = "";
+    document.getElementById("talla").value = "";
     document.getElementById("resultado").innerHTML = "";
 }
+
 
