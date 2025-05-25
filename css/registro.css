@@ -1,21 +1,51 @@
-/* styles.css */
-
-body {
+/* Reset y estilos base */
+html, body {
+  height: 100%;
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f1f1f1;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  box-sizing: border-box;
 }
 
-/* Contenedor general */
+/* Hero (encabezado superior) */
+.hero {
+  background: linear-gradient(to right, #2e2a7b, #3b3b98);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 15px;
+  margin-bottom: 40px;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.logo-text {
+  color: #00e676;
+  font-weight: 700;
+}
+
+/* Contenedor general para formularios y descripciones */
 .container {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   padding: 50px 30px;
-  background: linear-gradient(to top, #f1f1f1 50%,  #3b3b98 50%);
-  min-height: 100vh;
+  background: linear-gradient(to top, #f4f4f4 50%, #3b3b98 50%);
+  min-height: 300px;
   gap: 40px;
   flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 /* Sección de descripción */
@@ -25,6 +55,7 @@ body {
   padding: 40px;
   width: 400px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
 }
 
 .desc h1 {
@@ -41,6 +72,7 @@ body {
   padding: 30px 40px;
   width: 380px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
 }
 
 .formu h2 {
@@ -73,34 +105,6 @@ body {
   padding: 5px;
 }
 
-.btn {
-  display: block;
-  width: 100%;
-  margin-top: 15px;
-  background-color: #00cc66;
-  color: white;
-  font-weight: bold;
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  text-align: center;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #00a653;
-}
-
-/* Estilo para el botón que contiene enlace */
-.btn a {
-  color: #0b0c3f;
-  text-decoration: underline;
-  display: block;
-  width: 100%;
-}
-
 /* Resultado */
 #resultado {
   margin-top: 20px;
@@ -109,12 +113,33 @@ body {
   color: #0b0c3f;
 }
 
+/* Botones */
+.btn {
+  background-color: #00c853;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  background-color: #009624;
+}
+
+/* Footer al final */
 .footer {
   text-align: center;
   background-color: #2e2a7b;
   color: white;
   padding: 20px;
-  margin-top: 60px;
   font-size: 0.9rem;
   border-top: 5px solid #00e676;
+  margin-top: 40px;
 }

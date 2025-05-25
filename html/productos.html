@@ -1,39 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zapatos Registrados</title>
-  <link rel="stylesheet" href="../css/view.css" />
-</head>
-<body>
-
-  <main class="card">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zapatos Registrados</title>
+    <link rel="stylesheet" href="../css/view.css" />
+  </head>
+  <body>
     <header class="hero">
       <div class="hero-content">
-        <h1>Zapatos <span class="logo-text">Registrados</span></h1>
-        <p>Descubre nuestra colección exclusiva y encuentra tu par ideal.</p>
+        <h1>Bienvenido a <span class="logo-text">Piedi</span></h1>
+        <p>Donde cada paso cuenta. Explora la comodidad con estilo.</p>
+
+        <!-- Navegación principal -->
+        <nav class="nav-btn" aria-label="Navegación principal">
+          <a href="html/registro.html" class="btn">Registrar Zapato</a>
+          <a href="html/productos.html" class="btn">Ver Productos</a>
+        </nav>
       </div>
     </header>
+    <section class="filtros">
+      <input
+        type="text"
+        id="filtroNombre"
+        placeholder="Buscar por nombre..."
+        class="input"
+      />
 
-    
-  <section id="cardZap" class="cards-container">
-    <header>
-      <h1>Zapatos Registrados</h1>
-    </header>
+      <select id="filtroCategoria" class="input">
+        <option value="">Todas las categorías</option>
+        <option value="Deportivo">Deportivo</option>
+        <option value="Casual">Casual</option>
+        <option value="Elegante">Elegante</option>
+        <option value="Botas">Botas</option>
+        <option value="Trabajo / Industriales">Trabajo / Industriales</option>
+      </select>
 
-  
+      <input
+        type="number"
+        id="filtroPrecio"
+        placeholder="Precio máximo..."
+        class="input"
+      />
 
-  </section>
+      <button class="btn" onclick="aplicarFiltros()">Filtrar</button>
+      <button class="btn" onclick="limpiarFiltros()">Limpiar</button>
+    </section>
+    <div class="wrapper">
+      <main class="card">
+        <!-- Encabezado visual -->
+        <header class="hero">
+          <div class="hero-content">
+            <h1>Zapatos <span class="logo-text">Registrados</span></h1>
+            <p>
+              Descubre nuestra colección exclusiva y encuentra tu par ideal.
+            </p>
+          </div>
+        </header>
 
-    <nav class="nav-buttons" style="justify-content:center; margin-top: 40px;">
-      <a href="../index.html" class="btn">Volver al Registro</a>
-    </nav>
-  </main>
-  <script src="../js/script.js"></script>
-  <footer class="footer">
-    &copy; 2025 Tu Tienda de Zapatos | Contáctanos: info@tutiendazapatos.com
-  </footer>
+        <!-- Contenedor de productos -->
+        <section id="cardZap" class="cards-container">
+          <!-- Aquí se insertan dinámicamente los zapatos -->
+        </section>
 
-</body>
+        <!-- Navegación paginas-->
+        <nav class="paginacion">
+          <button class="btn" id="prevPage">Anterior</button>
+          <span id="pageInfo" style="margin: 0 15px; font-weight: bold"></span>
+          <button class="btn" id="nextPage">Siguiente</button>
+        </nav>
+      </main>
+
+      <!-- Footer fijo al final -->
+      <footer class="footer">
+        &copy; 2025 Tu Tienda de Zapatos | Contáctanos: info@tutiendazapatos.com
+      </footer>
+    </div>
+
+    <script src="../js/script.js"></script>
+  </body>
 </html>
