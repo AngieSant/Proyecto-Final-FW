@@ -122,6 +122,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 10px;
+  
 }
 
 .filtros {
@@ -135,6 +136,10 @@ body {
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 16px;
+}
+
+ .pageIn {
+  margin: 0 15px; font-weight: bold
 }
 
 /* Footer al final */

@@ -50,7 +50,19 @@
         </select>
 
         <label>Imagen:</label>
-        <input type="file" id="imagen" />
+        <select id="imagen">
+          <option value="">Selecciona una imagen</option>
+          <option value="img1.jpg">imagen #l</option>
+          <option value="img2.jpg">imagen #2</option>
+          <option value="img3.jpg">imagen #3</option>
+          <option value="img4.jpg">imagen #4</option>
+          <option value="img5.jpg">imagen #5</option>
+          <option value="img6.jpg">imagen #6</option>
+          <option value="img7.jpg">imagen #7</option>
+          <option value="img8.jpg">imagen #8</option>
+          <option value="img9.jpg">imagen #9</option>
+          <option value="img10.jpg">imagen #l0</option>
+        </select>
 
         <label>Código:</label>
         <input type="text" id="codigo" />
@@ -60,7 +72,7 @@
 
         <label>Talla:</label>
         <select id="talla">
-          <option value="">Selecciona una categoría</option>
+          <option value="">Selecciona una talla</option>
           <option value="1">35</option>
           <option value="2">36</option>
           <option value="3">37</option>
@@ -70,18 +82,20 @@
           <option value="5">41</option>
           <option value="5">42</option>
         </select>
-
-        <button class="btn" onclick="registrarZapato(event)">Registrar</button>
-        <button class="btn" onclick="limpiarCampos()">Limpiar</button>
-
-        <button class="btn"><a href="../index.html">Index</a></button>
+        <nav class="navv">
+    <button type="submit" class="btn">Registrar</button>
+    <button type="button" class="btn" onclick="limpiarCampos()">Limpiar</button>
+  </nav>
+  
         <h3 id="resultado"></h3>
       </form>
+      
     </section>
 
     <script src="../js/script.js"></script>
     <footer class="footer">
       &copy; 2025 Tu Tienda de Zapatos | Contáctanos: info@tutiendazapatos.com
     </footer>
+       <script src="../js/script.js"></script>
   </body>
 </html>
