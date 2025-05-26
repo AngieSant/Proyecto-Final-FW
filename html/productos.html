@@ -45,24 +45,7 @@
       <button class="btn" onclick="aplicarFiltros()">Filtrar</button>
       <button class="btn" onclick="limpiarFiltros()">Limpiar</button>
     </section>
-    <section id="tablaFiltro" class="container-filtro" style="display: none">
-      <table>
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Género</th>
-            <th>Categoría</th>
-            <th>Precio</th>
-            <th>Código</th>
-            <th>Talla</th>
-            <th>Imagen</th>
-          </tr>
-        </thead>
-        <tbody id="cuerpoTabla">
-          <!-- Aquí se insertarán los productos filtrados -->
-        </tbody>
-      </table>
-    </section>
+
     <section class="wrapper">
       <main class="card">
         <!-- Encabezado visual -->
@@ -79,7 +62,28 @@
         <section id="cardZap" class="cards-container">
           <!-- Aquí se insertan los datos de mi array -->
         </section>
-
+        <section
+          id="tablaFiltro"
+          class="container-filtro"
+          style="display: none"
+        >
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Género</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+                <th>Código</th>
+                <th>Talla</th>
+                <th>Imagen</th>
+              </tr>
+            </thead>
+            <tbody id="cuerpoTabla">
+              <!-- Aquí se insertarán los productos filtrados -->
+            </tbody>
+          </table>
+        </section>
         <!-- Navegación paginas-->
         <nav class="paginacion">
           <button class="btn" id="prevPage">Anterior</button>
@@ -95,6 +99,5 @@
     </section>
 
     <script src="../js/script.js"></script>
-    <!-- <script src="../js/filtro.js"></script> -->
   </body>
 </html>
