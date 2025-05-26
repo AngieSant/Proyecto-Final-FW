@@ -86,7 +86,7 @@ body {
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 20px;
-   text-align: center;
+  text-align: center;
 }
 
 /* Tarjetas individuales */
@@ -99,7 +99,7 @@ body {
   transition: transform 0.2s ease;
 }
 
-article:has(.card-item) {
+article:has(.card-item) {  /*para agregar estilos a las card de indicaciones*/
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
