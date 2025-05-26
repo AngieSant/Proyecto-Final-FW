@@ -42,14 +42,19 @@ html, body {
 /* Contenedor general */
 .container {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding: 50px 30px;
-  background: linear-gradient(to top, #f4f4f4 50%, #3b3b98 50%);
+  justify-content: center;       /* Centra los elementos horizontalmente */
+  align-items: flex-start;       /* Alinea al inicio verticalmente */
+  padding: 40px 20px;            /* Espacio alrededor, un poco más equilibrado */
   min-height: 300px;
-  gap: 40px;
-  flex-wrap: wrap;
+  gap: 300px;                     /* Espacio entre los elementos */
+  flex-wrap: wrap;               /* Permite que los items bajen a la siguiente línea */
+  background-color: #f9f9f9;  
+  border-radius: 12px;           
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+  max-width: 1200px;            
+  margin: 0 auto;               
 }
+
 
 /* Descripción */
 .desc {
