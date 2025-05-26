@@ -26,8 +26,7 @@ html, body {
 
 .hero-content p {
   font-size: 1.2rem;
-  margin-top: 0;
-  margin-bottom: 30px;
+  margin: 0 0 30px;
 }
 
 .logo-text {
@@ -35,7 +34,7 @@ html, body {
   font-weight: 700;
 }
 
-/* Contenedor general para formularios y descripciones */
+/* Contenedor general */
 .container {
   display: flex;
   justify-content: space-around;
@@ -48,21 +47,20 @@ html, body {
   box-sizing: border-box;
 }
 
-/* Sección de descripción */
+/* Descripción */
 .desc {
   background-color: white;
   border-radius: 60px;
   padding: 40px;
   width: 400px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  box-sizing: border-box;
+  text-align: center;
 }
 
 .desc h1 {
   font-size: 18px;
   font-weight: bold;
   color: #000;
-  text-align: center;
 }
 
 /* Formulario */
@@ -72,7 +70,6 @@ html, body {
   padding: 30px 40px;
   width: 380px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  box-sizing: border-box;
 }
 
 .formu h2 {
@@ -124,18 +121,22 @@ html, body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 15px;
-   margin-right: 15px;
-
-  
+  margin-right: 15px;
 }
+
+.btn:hover {
+  background-color: #00b74a;
+}
+
+/* Navegación (grupo de botones, por ejemplo) */
 .navv {
   display: flex;
   justify-content: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
-
-/* Footer al final */
+/* Footer */
 .footer {
   text-align: center;
   background-color: #2e2a7b;

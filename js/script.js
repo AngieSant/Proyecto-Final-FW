@@ -551,17 +551,6 @@ function limpiarCampos() {
   document.getElementById("resultado").textContent = "";
 }
 
-// Asignar evento submit solo si existe el formulario (registro.html)
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector("form.formu");
-  if (form) {
-    form.addEventListener("submit", registrarZapato);
-  }
-
-  // Si estamos en productos.html, cargar la vista
-  viewZapatos();
-});
-
 
 
 // Variables para paginación
@@ -653,9 +642,36 @@ function aplicarFiltros() {
     productosFiltrados = productosFiltrados.filter((z) => z.precio <= filtroPrecio);
   }
 
-  productos = productosFiltrados;
-  paginaActual = 1;
-  mostrarPagina(paginaActual);
+  mostrarTabla(productosFiltrados);
+
+  // Mostrar la tabla y ocultar tarjetas y paginación
+  document.getElementById("cardZap").style.display = "none";
+  document.querySelector(".paginacion").style.display = "none";
+  document.getElementById("tablaFiltro").style.display = "block";
+}
+
+function mostrarTabla(lista) {
+  const tabla = document.getElementById("cuerpoTabla");
+  tabla.innerHTML = "";
+
+  if (lista.length === 0) {
+    tabla.innerHTML = "<tr><td colspan='7'>No se encontraron productos.</td></tr>";
+    return;
+  }
+
+  lista.forEach((zapato) => {
+    const fila = document.createElement("tr");
+    fila.innerHTML = `
+      <td>${zapato.nombre}</td>
+      <td>${zapato.genero}</td>
+      <td>${zapato.categoria}</td>
+      <td>$${zapato.precio.toFixed(2)}</td>
+      <td>${zapato.codigo}</td>
+      <td>${zapato.talla}</td>
+      <td><img src="../img/${zapato.imagen}" alt="${zapato.nombre}" width="50" /></td>
+    `;
+    tabla.appendChild(fila);
+  });
 }
 
 function limpiarFiltros() {
@@ -666,12 +682,13 @@ function limpiarFiltros() {
   productos = JSON.parse(localStorage.getItem("productosZ")) || [];
   paginaActual = 1;
   mostrarPagina(paginaActual);
+
+  // Volver a mostrar tarjetas y paginación
+  document.getElementById("cardZap").style.display = "flex";
+  document.querySelector(".paginacion").style.display = "flex";
+  document.getElementById("tablaFiltro").style.display = "none";
 }
 
-// Iniciar vista al cargar la página
-window.onload = () => {
-  viewZapatos();
-};
 
 
 // Eventos DOM
@@ -689,3 +706,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (btnPrev) btnPrev.addEventListener("click", paginaAnterior);
   if (btnNext) btnNext.addEventListener("click", paginaSiguiente);
 });
+
+// Función para eliminar un zapato por código en la consola del navegador
+/* function eliminarZapatoPorCodigo(codigoEliminar) {
+  let productos = JSON.parse(localStorage.getItem("productosZ")) || [];
+  productos = productos.filter(zapato => zapato.codigo !== codigoEliminar);
+  localStorage.setItem("productosZ", JSON.stringify(productos));
+  console.log(`Zapato con código ${codigoEliminar} eliminado.`);
+} */
