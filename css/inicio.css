@@ -6,7 +6,7 @@ html, body {
   font-family: 'Poppins', sans-serif;
   background-color: #f4f4f4;
   color: #333;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Nota: esto debería aplicarse con * { box-sizing: border-box } para ser efectivo en todos los elementos */
 }
 
 /* Contenedor principal */
@@ -27,7 +27,7 @@ html, body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
+  /* box-sizing: border-box; <- innecesario aquí, ya está en html, body */
 }
 
 /* Hero (encabezado superior) */
@@ -74,7 +74,6 @@ html, body {
   font-weight: 700;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  display: inline-block;
   text-align: center;
 }
 
@@ -93,7 +92,7 @@ html, body {
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
+  box-sizing: border-box; /* útil aquí porque es un contenedor */
 }
 
 .about-text, .about-image {
