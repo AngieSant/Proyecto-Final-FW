@@ -460,7 +460,6 @@ const zapatos = [
     }
 ];
 
-
 function registrarZapato(event) {
   event.preventDefault(); // Evita recarga
 
@@ -487,39 +486,53 @@ function registrarZapato(event) {
     return;
   }
 
+  if (nombre.length > 20) {
+    resultado.textContent = "El nombre no debe superar los 20 caracteres.";
+    return;
+  }
+  
+  if (!/^\d+(\.\d{1,2})?$/.test(precio)) {
+    resultado.textContent = "El precio debe ser un número válido.";
+    return;
+  }
+
+  const precioFormateado = precio.toFixed(2);
+
+  if (
+    codigo.length < 8 ||
+    !/[A-Z]/.test(codigo) || 
+    !/[a-z]/.test(codigo) || 
+    (codigo.match(/\d/g) || []).length < 2
+  ) {
+    resultado.textContent = "El código debe tener mínimo 8 caracteres, al menos una mayúscula, una minúscula y dos números.";
+    return;
+  }
+
   // Construimos objeto zapato
   const zapato = {
     nombre,
     genero,
     categoria,
-    precio,
+    precio: parseFloat(precioFormateado),
     codigo,
     talla,
-    imagen, // aquí guardamos el valor del select (nombre archivo)
+    imagen, // nombre del archivo o ruta
   };
 
   let productos = JSON.parse(localStorage.getItem("productosZ")) || [];
   productos.push(zapato);
   localStorage.setItem("productosZ", JSON.stringify(productos));
 
-  resultado.textContent = "Registro Exitoso";
+  resultado.textContent = "Registro Exitoso, Redirigiendo...";
+
+  setTimeout(() => {
+    window.location.href = "../html/productos.html"; // Página principal de productos
+  }, 1500);
 
   limpiarCampos();
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  inicializarLocalStorage();
-
-  const form = document.querySelector("form.formu");
-  if (form) {
-    form.addEventListener("submit", registrarZapato);
-  }
-
-  viewZapatos();
-});
-
-
-// Función para limpiar campos del formulario registro.html
+// Limpiar campos del formulario
 function limpiarCampos() {
   document.getElementById("nombre").value = "";
   document.getElementById("categoria").value = "";
@@ -531,32 +544,12 @@ function limpiarCampos() {
   document.getElementById("resultado").textContent = "";
 }
 
-// Asignar evento submit solo si existe el formulario (registro.html)
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector("form.formu");
-  if (form) {
-    form.addEventListener("submit", registrarZapato);
-  }
-
-  // Si estamos en productos.html, cargar la vista
-  viewZapatos();
-});
-
-
-
-// Variables para paginación
-// Variables globales
+// Variables globales para paginación
 let productos = [];
 let paginaActual = 1;
-const productosPorPagina = 10; // Puedes ajustar este número
+const productosPorPagina = 12;
 
-// Cargar productos y mostrar la página actual
-function viewZapatos() {
-  productos = JSON.parse(localStorage.getItem("productosZ")) || [];
-  mostrarPagina(paginaActual);
-}
-
-// Mostrar los productos de la página actual
+// Mostrar productos de la página actual
 function mostrarPagina(pagina) {
   const contenedor = document.getElementById("cardZap");
   const infoPagina = document.getElementById("pageInfo");
@@ -566,12 +559,10 @@ function mostrarPagina(pagina) {
   if (pagina < 1) pagina = 1;
   if (pagina > totalPaginas) pagina = totalPaginas;
 
-  // Calcular índices del slice
   const inicio = (pagina - 1) * productosPorPagina;
   const fin = inicio + productosPorPagina;
   const productosPagina = productos.slice(inicio, fin);
 
-  // Mostrar cada producto
   productosPagina.forEach((zapato) => {
     const card = document.createElement("article");
     card.classList.add("card-item");
@@ -589,15 +580,20 @@ function mostrarPagina(pagina) {
     contenedor.appendChild(card);
   });
 
-  // Actualizar info página
   infoPagina.textContent = `Página ${pagina} de ${totalPaginas || 1}`;
 
-  // Actualizar estado botones
   document.getElementById("prevPage").disabled = pagina <= 1;
   document.getElementById("nextPage").disabled = pagina >= totalPaginas;
 }
 
-// Funciones para navegar entre páginas
+// Cargar productos y mostrar la primera página
+function viewZapatos() {
+  productos = JSON.parse(localStorage.getItem("productosZ")) || [];
+  paginaActual = 1;
+  mostrarPagina(paginaActual);
+}
+
+// Navegación paginación
 document.getElementById("prevPage").addEventListener("click", () => {
   if (paginaActual > 1) {
     paginaActual--;
@@ -613,7 +609,7 @@ document.getElementById("nextPage").addEventListener("click", () => {
   }
 });
 
-// Opcional: funciones de filtro (según botones y inputs en HTML)
+// Aplicar filtros
 function aplicarFiltros() {
   const filtroNombre = document.getElementById("filtroNombre").value.toLowerCase();
   const filtroCategoria = document.getElementById("filtroCategoria").value;
@@ -622,15 +618,15 @@ function aplicarFiltros() {
   let productosFiltrados = JSON.parse(localStorage.getItem("productosZ")) || [];
 
   if (filtroNombre) {
-    productosFiltrados = productosFiltrados.filter((z) =>
+    productosFiltrados = productosFiltrados.filter(z =>
       z.nombre.toLowerCase().includes(filtroNombre)
     );
   }
   if (filtroCategoria) {
-    productosFiltrados = productosFiltrados.filter((z) => z.categoria === filtroCategoria);
+    productosFiltrados = productosFiltrados.filter(z => z.categoria === filtroCategoria);
   }
   if (!isNaN(filtroPrecio)) {
-    productosFiltrados = productosFiltrados.filter((z) => z.precio <= filtroPrecio);
+    productosFiltrados = productosFiltrados.filter(z => z.precio <= filtroPrecio);
   }
 
   productos = productosFiltrados;
@@ -638,6 +634,7 @@ function aplicarFiltros() {
   mostrarPagina(paginaActual);
 }
 
+// Limpiar filtros
 function limpiarFiltros() {
   document.getElementById("filtroNombre").value = "";
   document.getElementById("filtroCategoria").value = "";
@@ -648,24 +645,12 @@ function limpiarFiltros() {
   mostrarPagina(paginaActual);
 }
 
-// Iniciar vista al cargar la página
-window.onload = () => {
-  viewZapatos();
-};
-
-
-// Eventos DOM
-document.addEventListener("DOMContentLoaded", () => {
-  inicializarLocalStorage();
-
+// Inicializar al cargar la página
+window.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form.formu");
   if (form) form.addEventListener("submit", registrarZapato);
 
-  viewZapatos();
-
- 
-  const btnPrev = document.getElementById("prevPage");
-  const btnNext = document.getElementById("nextPage");
-  if (btnPrev) btnPrev.addEventListener("click", paginaAnterior);
-  if (btnNext) btnNext.addEventListener("click", paginaSiguiente);
+  if (window.location.pathname.includes("productos.html")) {
+    viewZapatos();
+  }
 });
