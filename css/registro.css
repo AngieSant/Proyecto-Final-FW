@@ -150,3 +150,10 @@ html, body {
   border-top: 5px solid #00e676;
   margin-top: 40px;
 }
+.about-image img {
+  width: 200px;
+  max-width: 100%;
+  border-radius: 15px;
+  display: block;
+  margin: 0 auto;
+}
